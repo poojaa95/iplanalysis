@@ -2,9 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# -----------------------------
-# LOAD DATA
-# -----------------------------
+# LOADING DATA
+
 matches = pd.read_csv("matches.csv")
 deliveries = pd.read_csv("deliveries.csv")
 
@@ -16,9 +15,8 @@ run_col = 'batsman_runs' if 'batsman_runs' in deliveries.columns else 'runs_off_
 plt.style.use("dark_background")
 sns.set_theme(style="darkgrid")
 
-# -----------------------------
-# 1️⃣ TOP 10 RUN SCORERS
-# -----------------------------
+# TOP 10 RUN SCORERS
+
 top_batsmen = (
     deliveries.groupby(batter_col)[run_col]
     .sum()
@@ -47,9 +45,8 @@ for container in ax.containers:
 plt.tight_layout()
 plt.show()
 
-# -----------------------------
-# 2️⃣ STRIKE RATE (Min 100 Balls)
-# -----------------------------
+# STRIKE RATE (Min 100 Balls)
+
 balls = deliveries.groupby(batter_col).size()
 runs = deliveries.groupby(batter_col)[run_col].sum()
 
@@ -82,9 +79,8 @@ for container in ax.containers:
 plt.tight_layout()
 plt.show()
 
-# -----------------------------
-# 3️⃣ MOST SIXES
-# -----------------------------
+#  MOST SIXES
+
 sixes = deliveries[deliveries[run_col] == 6]
 
 top_sixes = (
@@ -116,9 +112,8 @@ for container in ax.containers:
 plt.tight_layout()
 plt.show()
 
-# -----------------------------
-# 4️⃣ TOP 10 BOWLERS
-# -----------------------------
+# TOP 10 BOWLERS
+
 wickets = deliveries[
     (deliveries['dismissal_kind'].notna()) &
     (deliveries['dismissal_kind'] != 'run out')
@@ -153,9 +148,8 @@ for container in ax.containers:
 plt.tight_layout()
 plt.show()
 
-# -----------------------------
-# 5️⃣ TOP 5 TEAMS BY WINS
-# -----------------------------
+#  TOP 5 TEAMS BY WINS
+
 top_teams = (
     matches['winner']
     .value_counts()
@@ -184,5 +178,6 @@ for container in ax.containers:
 
 plt.tight_layout()
 plt.show()
+
 
 print("\nIPL Analysis Completed Successfully!")
