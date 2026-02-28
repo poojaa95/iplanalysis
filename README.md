@@ -1,8 +1,8 @@
 # iplanalysis
-# This is my second data analysis project.
-# In this project, I worked with IPL match data to understand player and team performance using Python.
+This is my second data analysis project.
+In this project, I worked with IPL match data to understand player and team performance using Python.
 
-# The main aim was to practice data analysis on a real-world dataset and improve my visualization skills compared to my first project (restaurant sales analysis).
+The main aim was to practice data analysis on a real-world dataset and improve my visualization skills compared to my first project (restaurant sales analysis).
 
 # Dataset
 The project uses two CSV files:
