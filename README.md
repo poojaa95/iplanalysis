@@ -33,9 +33,5 @@ Python
 Pandas
 Matplotlib
 Seaborn
-
-# Future Improvements
-Season-wise analysis
-Orange cap / Purple cap analysis
 Creating an interactive dashboard using Streamlit
 Adding more advanced statistic
